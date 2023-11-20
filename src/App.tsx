@@ -2,8 +2,9 @@
 
 import './App.css'
 import BGVideo from "./assets/sample.mp4";
+import Container from './Components/Container';
 
-import Menu from './Menu';
+import Menu from './Components/Menu';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           Your browser does not support the video tag.
         </video>
         <div className="main-container">
-          <div className="sub-div">Content</div>
+          <Container/>
           <Menu />
           <div className="sub-div">footer</div>
         </div>

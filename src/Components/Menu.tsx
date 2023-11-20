@@ -1,13 +1,13 @@
 
 import { useState } from 'react';
-import './App.css'
-import './assets/Menu.css'
+import '../App.css'
+import '../assets/Menu.css'
 
 import { Icon } from '@mdi/react';
 import { mdiCurtains, mdiMusic, mdiMovie, mdiLightbulb, mdiHomeAutomation} from '@mdi/js';
 
 function Menu() {
-    const [isFlipped, setIsFlipped] = useState([false, false, false, false, false,false]);
+    const [isFlipped, setIsFlipped] = useState([true, false, false, false, false,false]);
 
     const handleClick = (id: number ) => {
         const newArray = isFlipped.map((_value, i) => (i == id ? !isFlipped[id] : false));
@@ -73,7 +73,7 @@ function Menu() {
                                 vertical
                                 rotate={180}
                                 color="white" /></div>
-                        <div className="back">Movies</div>
+                        <div className="back">Appliances</div>
                     </div>
                 </div>
                 

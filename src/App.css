@@ -38,12 +38,15 @@
 .sub-div:nth-child(1) {
   height: 70%; /* 70% height for the first sub div */
   /* Background color for the first sub div */
+  
+  
 }
 
 .sub-div:nth-child(2) {
   height: 20%; /* 20% height for the second sub div */
-  background-color: rgba(17, 17, 17, 0.5); /* Background color for the second sub div */
-  align-items: center;
+  background-color: rgba(17, 17, 17, 0.5);
+  /* Background color for the second sub div */
+  
 }
 
 .sub-div:nth-child(3) {
