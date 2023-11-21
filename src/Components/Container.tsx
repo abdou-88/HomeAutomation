@@ -1,21 +1,23 @@
 
-import { useState } from 'react';
 import '../App.css';
 import '../assets/Container.css';
 
+interface ContainerProps {
+    content: React.ReactNode | null;
+    isOpen: boolean;
+}
 
-function Container() {
-    const [isFeeding, setIsFeeding] = useState(false);
+const Container: React.FC<ContainerProps> = ({ content, isOpen }) => {
 
-    const handleClick = () => {
-        setIsFeeding(!isFeeding);
-    };
+   
+   
+  
     return (
         <>
-            <div className="sub-div" onClick={handleClick}>
+            <div className="sub-div" >
                 
-                    <div className={`container ${isFeeding ? 'feed-in' : ''}`}>
-                        main container
+                <div className={`container ${isOpen ? 'feed-in' : ''}`}>
+                    {content}
                     </div>
                 
             </div>
