@@ -45,6 +45,14 @@
   background-color: rgba(204, 204, 204, 0.5);
 
 }
+.icon{
+   transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+
+
+
 
 .back {
   background-color: rgba(0,0,0,0.2);

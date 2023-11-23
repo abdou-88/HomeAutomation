@@ -18,10 +18,11 @@ interface MenuProps {
 interface ImenuItems {
     icon: string;
     component: JSX.Element;
+    title: string,
 }
 
 const Menu: React.FC<MenuProps> = ({ updateContainer }) => {
-    
+
     const [isFlipped, setIsFlipped] = useState([true, false, false, false, false,false]);
 
     const handleClick = (id: number, newdiv: ReactNode ) => {
@@ -31,27 +32,33 @@ const Menu: React.FC<MenuProps> = ({ updateContainer }) => {
         updateContainer(newdiv, isFlipped[id]);
         
     };
+  
 
     const menuItems: ImenuItems[] = [
         {
             icon: mdiLightbulb,
             component: <Lights />,
+            title:'Light',
         },
         {
             icon: mdiCurtains,
             component: <Curtains />,
+            title: 'Curtains',
         },
         {
             icon: mdiMusic,
             component: <Music />,
+            title: 'Music',
         },
         {
             icon: mdiMovie,
             component: <Movies />,
+            title: 'Movies',
         },
         {
             icon: mdiHomeAutomation,
             component: <Appliances />,
+            title: 'Appliances',
         },
     ];
 
@@ -61,21 +68,23 @@ const Menu: React.FC<MenuProps> = ({ updateContainer }) => {
         <>
             <div className="sub-div">
                 
-                    {menuItems.map((object: ImenuItems, index: number) => (
+                    {
+                   
+                    menuItems.map((object: ImenuItems, index: number) => (
+                         
                         <div key={index} className={`flip-container ${isFlipped[index] ? 'flip' : ''}`} onClick={() => handleClick(index, object.component)}>
                             <div className="flipper">
                                 <div className="front">
-                                    <Icon path={object.icon}
-                                        size={4}
+                                    <Icon className={` ${isFlipped[index] ? 'icontransformed' : 'icon'}`} path={object.icon}
+                                        size={3.5}
                                         horizontal
                                         vertical
                                         rotate={180}
                                         color="white" /></div>
-                                <div className="back">Lights</div>
+                                <div className="back">{object.title}</div>
                             </div>
                         </div>
-                    ))}
-              
+                    ))}              
             
             </div>
         </>
