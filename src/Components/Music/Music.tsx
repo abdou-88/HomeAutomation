@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, IconButton, Slider } from '@mui/material';
 import { PlayArrow, Pause, SkipNext, SkipPrevious } from '@mui/icons-material';
 import { Howl } from 'howler';
+import '../../assets/Music.css'
 
 
 interface MusicProps {
@@ -83,32 +84,54 @@ const Music: React.FC<MusicProps> = () => {
         audio.seek(seekTime);}
     };
 
-
+    const containerStyles = {
+        // Add your styling properties here
+        display: 'flex',
+        height: '100%',
+        width : '100%',
+    };
 
     return (
-        <Container>
+        <Container style={containerStyles} >
 
-
-            <h1>{tracks[currentTrackIndex].title}</h1>
-            <div>
-                <IconButton onClick={handlePrevTrack}>
-                    <SkipPrevious />
-                </IconButton>
-                <IconButton onClick={handlePlayPause}>
-                    {isPlaying ? <Pause /> : <PlayArrow />}
-                </IconButton>
-                <IconButton onClick={handleNextTrack}>
-                    <SkipNext />
-                </IconButton>
+            <div className="side-by-side">
+                <h2>Tracks</h2>
+                <ul>
+                    {tracks.map((track, index) => (
+                        <li key={index} onClick={() => setCurrentTrackIndex(index)}>
+                            {track.title}
+                        </li>
+                    ))}
+                </ul>
             </div>
-         
-            <Slider
-                value={audio.seek()}
-                min={0}
-                max={audio.duration()}
-                onChange={handleSliderChange}
-                aria-labelledby="continuous-slider"
-            />
+            
+            <div className="side-by-side">
+                <h1>{tracks[currentTrackIndex].title}</h1>
+                <div className="controls-container">
+                    <IconButton onClick={handlePrevTrack}>
+                        <SkipPrevious />
+                    </IconButton>
+                    <IconButton onClick={handlePlayPause}>
+                        {isPlaying ? <Pause /> : <PlayArrow />}
+                    </IconButton>
+                    <IconButton onClick={handleNextTrack}>
+                        <SkipNext />
+                    </IconButton>
+                    {audio && (
+                        <div>
+                            <Slider
+                                style={containerStyles}
+                                value={audio.seek()}
+                                min={0}
+                                max={audio.duration()}
+                                onChange={handleSliderChange}
+                                aria-labelledby="continuous-slider"
+                            />
+                        </div>
+                    )}
+                </div>
+            </div>
+
         </Container>
     );
 
