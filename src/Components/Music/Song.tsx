@@ -24,17 +24,15 @@ const Song: React.FC<SongProps> = ({ currentSong }) => {
 };
 
 const SongContainer = styled.div`
-  margin-top: 10vh;
-  min-height: 50vh;
+  
   max-height: 60vh;
-  display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
 `;
 
 const Img = styled.img`
-  width: 20%;
+  width: 10%;
   border-radius: 50%;
   @media screen and (max-width: 768px) {
     width: 50%;

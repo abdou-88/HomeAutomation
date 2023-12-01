@@ -156,7 +156,7 @@ const Player: React.FC<IPlayerProps> = ({currentSong,
 };
 
 const PlayerContainer = styled.div`
-	min-height: 20vh;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -164,7 +164,7 @@ const PlayerContainer = styled.div`
 `;
 
 const TimeControlContainer = styled.div`
-	margin-top: 5vh;
+	
 	width: 50%;
 	display: flex;
 	@media screen and (max-width: 768px) {
@@ -172,9 +172,7 @@ const TimeControlContainer = styled.div`
 	}
 `;
 
-const Track = styled.div.attrs<{ currentSong: Song }>(() => ({
-	// Use attrs to define custom props
-  }))<{ currentSong: Song }>`
+const Track = styled.div.attrs<{ currentSong: Song }>(() => ({}))<{ currentSong: Song }>`
   background: lightblue;
   width: 100%;
   height: 1rem;
@@ -202,8 +200,7 @@ const Input = styled.input`
 	-webkit-appearance: none;
 	background: transparent;
 	cursor: pointer;
-	/* padding-top: 1rem;
-	padding-bottom: 1rem; */
+	
 	&:focus {
 		outline: none;
 		-webkit-appearance: none;
