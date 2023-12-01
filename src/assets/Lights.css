@@ -1,10 +1,13 @@
 
 .lights {
-	
-	font-size: 30px;
-    display: flex;
+	width: 100%; /* Set the width of the main container */
+  max-height: 80%; /* Set a fixed height for the main container */
+  overflow: auto; /* Enable scrollbar when content overflows */
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between; 
+	font-size: 30px;
+    
 }
 
 

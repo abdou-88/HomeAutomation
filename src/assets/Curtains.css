@@ -1,0 +1,58 @@
+.curtains-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px; /* Set the height of the curtains */
+    overflow: hidden;
+    
+  }
+  
+  .curtains-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/window.png');
+    background-size: 100% 100%;
+  }
+  
+  .curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('/public/Curtains.jpg');
+    background-size: 100% 100%;
+    
+    transition: transform 1s ease-in-out; /* Animation transition */
+  }
+  
+  .left {
+   
+    left: 0;
+    transform-origin: top right; /* Set the transform origin to the top right corner */
+  }
+  
+  .right {
+    right: 0;
+    transform-origin: top left; /* Set the transform origin to the top left corner */
+  }
+  
+  .open.left {
+    transform: translateX(-90%);
+  }
+  
+  .open.right {
+    transform: translateX(90%);
+  }
+  
+  .button-wrapper {
+    margin-top: 10px; /* Adjust margin between curtains and button */
+  }
+  
+  .content-below-curtains {
+    padding: 5px;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  
