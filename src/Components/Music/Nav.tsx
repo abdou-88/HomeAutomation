@@ -16,7 +16,6 @@ const Nav: React.FC<NavProps> = ({ libraryStatus, setLibraryStatus }) => {
   </Button>
     <NavContainer>
       <H1 libraryStatus={libraryStatus}>Music Player</H1>
-     
     </NavContainer></>
     
   );

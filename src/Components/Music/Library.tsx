@@ -56,7 +56,7 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
   z-index: 9;
   top: 0;
   left: 0;
-  width: 20rem;
+  width: 400PX;
   height: 100%;
   background-color: white;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
@@ -89,11 +89,11 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
 `;
 
 const SongContainer = styled.div`
-  display: flex;
+width: 100%;
   flex-direction: column;
   background-color: white;
   color : #000000;
-  width: 20rem;
+ 
 `;
 
 const H1 = styled.h2`
