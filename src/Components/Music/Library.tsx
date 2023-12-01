@@ -92,10 +92,13 @@ const SongContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
+  color : #000000;
+  width: 20rem;
 `;
 
 const H1 = styled.h2`
   padding: 2rem;
+  color : #000000;
 `;
 
 export default Library;

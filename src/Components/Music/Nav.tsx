@@ -10,13 +10,15 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({ libraryStatus, setLibraryStatus }) => {
   return (
+    <><Button onClick={() => setLibraryStatus(!libraryStatus)}>
+    Library
+    <FontAwesomeIcon icon={faMusic} />
+  </Button>
     <NavContainer>
       <H1 libraryStatus={libraryStatus}>Music Player</H1>
-      <Button onClick={() => setLibraryStatus(!libraryStatus)}>
-        Library
-        <FontAwesomeIcon icon={faMusic} />
-      </Button>
-    </NavContainer>
+     
+    </NavContainer></>
+    
   );
 };
 
@@ -36,7 +38,7 @@ const NavContainer = styled.div`
 
 const H1 = styled.h1<{ libraryStatus: boolean }>`
   transition: all 0.5s ease;
-color: #ffffff;
+  color: #ffffff;
   @media screen and (max-width: 768px) {
     visibility: ${(p) => (p.libraryStatus ? "hidden" : "visible")};
     opacity: ${(p) => (p.libraryStatus ? "0" : "100")};
@@ -46,7 +48,10 @@ color: #ffffff;
 `;
 
 const Button = styled.button`
-  background: transparent;
+  background: #ccc;
+  position : absolute;
+  right: 10px;
+  top: 10px;
   border: none;
   cursor: pointer;
   border: 2px solid rgb(65, 65, 65);
