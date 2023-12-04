@@ -3,24 +3,23 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
-import {NavProps} from '../../Types';
+import { NavProps } from '../../Types';
 
 const Nav: React.FC<NavProps> = ({ libraryStatus, setLibraryStatus }) => {
   return (
     <><Button onClick={() => setLibraryStatus(!libraryStatus)}>
-    Library
-    <FontAwesomeIcon icon={faMusic} />
-  </Button>
-    <NavContainer>
-      <H1 libraryStatus={libraryStatus}>Music Player</H1>
-    </NavContainer></>
-    
+      Library
+      <FontAwesomeIcon icon={faMusic} />
+    </Button>
+      <NavContainer>
+        <H1 libraryStatus={libraryStatus}>Music Player</H1>
+      </NavContainer></>
+
   );
 };
 
 const NavContainer = styled.div`
-  min-height: 10vh;
-  
+  min-height: 10vh;  
   justify-content: space-around;
   align-items: center;
   @media screen and (max-width: 768px) {

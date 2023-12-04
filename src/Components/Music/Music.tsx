@@ -5,22 +5,16 @@ import "../../App.css";
 
 // Import components
 import Player from "./Player";
-import Song from "./Song";
+import Track from "./Track";
 import Library from "./Library";
 import Nav from "./Nav";
+
+import {Song} from '../../Types'
 
 // Import data
 import data from "./Data";
 
-interface Song {
-    name: string;
-    cover: string;
-    artist: string;
-    audio: string;
-    color: string[];
-    id: string;
-    active: boolean;
-  }
+
 
 const Music: React.FC = () => {
 
@@ -59,7 +53,7 @@ const Music: React.FC = () => {
   return (
     <AppContainer libraryStatus={libraryStatus}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} />
+      <Track currentSong={currentSong} />
       <Player
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}

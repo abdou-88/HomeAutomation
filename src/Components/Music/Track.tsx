@@ -5,7 +5,7 @@ import React from "react";
 import styled from "styled-components";
 import {SongProps} from '../../Types';
 
-const Song: React.FC<SongProps> = ({ currentSong }) => {
+const Track: React.FC<SongProps> = ({ currentSong }) => {
   return (
     <SongContainer>
       <Img src={currentSong.cover} alt={currentSong.name}></Img>
@@ -37,4 +37,4 @@ const H2 = styled.h3`
   font-size: 1rem;
 `;
 
-export default Song;
+export default Track;
