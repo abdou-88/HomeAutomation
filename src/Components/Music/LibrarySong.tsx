@@ -1,24 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import {LibrarySongProps} from '../../Types';
 
-interface Song {
-  name: string;
-  cover: string;
-  artist: string;
-  audio: string;
-  color: string[];
-  id: string;
-  active: boolean;
-}
-
-interface LibrarySongProps {
-  song: Song;
-  setCurrentSong: React.Dispatch<React.SetStateAction<Song>>;
-  audioRef: React.MutableRefObject<HTMLAudioElement>;
-  isPlaying: boolean;
-  songs: Song[];
-  setSongs: React.Dispatch<React.SetStateAction<Song[]>>;
-}
 
 const LibrarySong: React.FC<LibrarySongProps> = ({
   song,
@@ -65,12 +48,10 @@ const LibrarySong: React.FC<LibrarySongProps> = ({
 };
 
 const LibrarySongContainer = styled.div<{ isActive: boolean }>`
-  padding: 0 2rem 0 2rem;
-  height: 100px;
-  width: 100%;
+  padding: 0 2rem 0 2rem; 
   display: flex;
   transition: all 0.3s ease;
-  background-color: ${(p) => (p.isActive ? "#CCC" : "white")};
+  background-color: ${(p) => (p.isActive ? "#cccccc" : "transparent")};
   &:hover {
     background-color: lightblue;
     transition: all 0.3s ease;

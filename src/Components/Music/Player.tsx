@@ -2,36 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import {IPlayerProps, AnimateTrackProps, Song} from '../../Types'
 
 // style
 const pointer = { cursor: "pointer" };
 
-interface Song {
-	id: string;
-	// Define other properties of your song object here
-	color: string[];
-	active: boolean;
-	// Add any other properties specific to a song
-  }
-  interface AnimateTrackProps {
-	songInfo: {
-	  currentTime: number;
-	  duration: number;
-	};
-  }
-  
-
-interface IPlayerProps  {
-	currentSong: any,
-	setCurrentSong: any,
-	isPlaying: boolean,
-	setIsPlaying: any,
-	audioRef: any,
-	songInfo: any,
-	setSongInfo: any,
-	songs: any,
-	setSongs: any,
-}
 
 const Player: React.FC<IPlayerProps> = ({currentSong,
 	setCurrentSong,

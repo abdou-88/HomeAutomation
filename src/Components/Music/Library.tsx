@@ -2,29 +2,10 @@ import React from "react";
 import LibrarySong from "./LibrarySong";
 import styled from "styled-components";
 
-interface Song {
-  name: string;
-  cover: string;
-  artist: string;
-  audio: string;
-  color: string[];
-  id: string;
-  active: boolean;
-}
-
-interface LibraryProps {
-  songs: Song[];
-  currentSong: Song;
-  setCurrentSong: React.Dispatch<React.SetStateAction<Song>>;
-  audioRef: React.MutableRefObject<HTMLAudioElement>;
-  isPlaying: boolean;
-  setSongs: React.Dispatch<React.SetStateAction<Song[]>>;
-  libraryStatus: boolean;
-}
+import {LibraryProps} from '../../Types';
 
 const Library: React.FC<LibraryProps> = ({
-  songs,
-  currentSong,
+  songs,  
   setCurrentSong,
   audioRef,
   isPlaying,
@@ -56,9 +37,9 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
   z-index: 9;
   top: 0;
   left: 0;
-  width: 400PX;
+
   height: 100%;
-  background-color: white;
+  background-color: rgba(204,204,204,0.5);
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   user-select: none;
   overflow: scroll;
@@ -77,7 +58,7 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(155, 155, 155, 0.5);
+    background-color: rgba(155, 155, 155, 0.5) transparent;
     border-radius: 20px;
     border: transparent;
   }
@@ -89,9 +70,9 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
 `;
 
 const SongContainer = styled.div`
-width: 100%;
+
   flex-direction: column;
-  background-color: white;
+  
   color : #000000;
  
 `;

@@ -3,15 +3,7 @@
 
 import React from "react";
 import styled from "styled-components";
-
-interface SongProps {
-  currentSong: {
-    cover: string;
-    name: string;
-    artist: string;
-    // Add other properties of the currentSong object as needed
-  };
-}
+import {SongProps} from '../../Types';
 
 const Song: React.FC<SongProps> = ({ currentSong }) => {
   return (
@@ -23,10 +15,8 @@ const Song: React.FC<SongProps> = ({ currentSong }) => {
   );
 };
 
-const SongContainer = styled.div`
-  
+const SongContainer = styled.div`  
   max-height: 60vh;
-
   align-items: center;
   justify-content: center;
 `;
