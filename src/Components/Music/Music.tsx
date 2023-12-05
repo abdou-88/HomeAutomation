@@ -6,7 +6,7 @@ import "../../App.css";
 // Import components
 import Player from "./Player";
 import Track from "./Track";
-import Library from "./Library";
+import Library from "./SidePanel";
 import Nav from "./Nav";
 
 import {Song} from '../../Types'

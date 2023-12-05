@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import {LibraryProps} from '../../Types';
 
-const Library: React.FC<LibraryProps> = ({
+const SidePanel: React.FC<LibraryProps> = ({
   songs,  
   setCurrentSong,
   audioRef,
@@ -80,4 +80,4 @@ const H1 = styled.h2`
   color : #000000;
 `;
 
-export default Library;
+export default SidePanel;

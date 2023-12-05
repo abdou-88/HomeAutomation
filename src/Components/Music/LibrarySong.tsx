@@ -57,16 +57,14 @@ const LibrarySongContainer = styled.div<{ isActive: boolean }>`
     transition: all 0.3s ease;
   }
   &.active {
-    background-color: pink;
+    background-color: gray;
   }
 `;
 
 const LibrarySongDescription = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+ 
+ 
+
 `;
 
 const Img = styled.img`
@@ -80,7 +78,7 @@ const H1 = styled.h3`
 `;
 
 const H2 = styled.h4`
-  padding-left: 1rem;
+  padding-left: 0rem;
   font-size: 0.7rem;
 `;
 
