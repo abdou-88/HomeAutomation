@@ -37,18 +37,16 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
   z-index: 9;
   top: 0;
   left: 0;
-
   height: 100%;
   background-color: rgba(204,204,204,0.5);
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   user-select: none;
-  overflow: scroll;
+  overflow: auto  ;
   transform: translateX(${(p) => (p.libraryStatus ? "0%" : "-100%")});
   transition: all 0.5s ease;
   opacity: ${(p) => (p.libraryStatus ? "100" : "0")};
-  scrollbar-width: thin;
-  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
-
+  scrollbar-width: thin;  
+  border-right: 2px solid #fff;
   &::-webkit-scrollbar {
     width: 5px;
   }

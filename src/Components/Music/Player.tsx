@@ -85,6 +85,8 @@ const Player: React.FC<IPlayerProps> = ({currentSong,
 		setSongs(newSongs);
 	};
 
+	
+
 	return (
 		<PlayerContainer>
 			<TimeControlContainer>
