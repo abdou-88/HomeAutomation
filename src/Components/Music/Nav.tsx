@@ -5,14 +5,14 @@ import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
 import { NavProps } from '../../Types';
 
-const Nav: React.FC<NavProps> = ({ libraryStatus, setLibraryStatus }) => {
+const Nav: React.FC<NavProps> = ({ SidePanelStatus, setSidePanelStatus }) => {
   return (
-    <><Button onClick={() => setLibraryStatus(!libraryStatus)}>
+    <><Button onClick={() => setSidePanelStatus(!SidePanelStatus)}>
       Library
       <FontAwesomeIcon icon={faMusic} />
     </Button>
       <NavContainer>
-        <H1 libraryStatus={libraryStatus}>Music Player</H1>
+        <H1 SidePanelStatus={SidePanelStatus}>Music Player</H1>
       </NavContainer></>
 
   );
@@ -31,12 +31,12 @@ const NavContainer = styled.div`
   }
 `;
 
-const H1 = styled.h1<{ libraryStatus: boolean }>`
+const H1 = styled.h1<{ SidePanelStatus: boolean }>`
   transition: all 0.5s ease;
   color: #ffffff;
   @media screen and (max-width: 768px) {
-    visibility: ${(p) => (p.libraryStatus ? "hidden" : "visible")};
-    opacity: ${(p) => (p.libraryStatus ? "0" : "100")};
+    visibility: ${(p) => (p.SidePanelStatus ? "hidden" : "visible")};
+    opacity: ${(p) => (p.SidePanelStatus ? "0" : "100")};
     transition: all 0.5s ease;
     color: #ffffff;
   }

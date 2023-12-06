@@ -6,7 +6,7 @@ import "../../App.css";
 // Import components
 import Player from "./Player";
 import Track from "./Track";
-import Library from "./SidePanel";
+import SidePanel from "../SidePanel";
 import Nav from "./Nav";
 
 import {Song} from '../../Types'
@@ -23,7 +23,7 @@ const Music: React.FC = () => {
   const [songs, setSongs] = useState<Song[]>(data());
   const [currentSong, setCurrentSong] = useState<Song>(songs[0]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [libraryStatus, setLibraryStatus] = useState<boolean>(false);
+  const [SidePanelStatus, setSidePanelStatus] = useState<boolean>(false);
   const [songInfo, setSongInfo] = useState<{ currentTime: number; duration: number }>({
     currentTime: 0,
     duration: 0,
@@ -51,8 +51,8 @@ const Music: React.FC = () => {
   };
 
   return (
-    <AppContainer libraryStatus={libraryStatus}>
-      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+    <AppContainer SidePanelStatus={SidePanelStatus}>
+      <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} />
       <Track currentSong={currentSong} />
       <Player
         isPlaying={isPlaying}
@@ -65,14 +65,14 @@ const Music: React.FC = () => {
         songs={songs}
         setSongs={setSongs}
       />
-      <Library
+      <SidePanel
         currentSong={currentSong} // Make sure currentSong is included here
         songs={songs}
         setCurrentSong={setCurrentSong}
         audioRef={audioRef}
         isPlaying={isPlaying}
         setSongs={setSongs}
-        libraryStatus={libraryStatus}
+        SidePanelStatus={SidePanelStatus}
       />
       <audio
         onLoadedMetadata={updateTimeHandler}
@@ -85,11 +85,11 @@ const Music: React.FC = () => {
   );
 };
 
-const AppContainer = styled.div<{ libraryStatus: boolean }>`
+const AppContainer = styled.div<{ SidePanelStatus: boolean }>`
   transition: all 0.5s ease;
   width: 100%;
   height: 100%; 
-  margin-left: ${(p) => (p.libraryStatus ? "20rem" : "0")};
+  margin-left: ${(p) => (p.SidePanelStatus ? "20rem" : "0")};
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }

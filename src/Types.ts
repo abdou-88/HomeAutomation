@@ -8,14 +8,23 @@ export interface Song {
     active: boolean;
   }
   
-  export interface LibraryProps {
+  export interface MusicSideProps{
     songs: Song[];
     currentSong: Song;
     setCurrentSong: React.Dispatch<React.SetStateAction<Song>>;
     audioRef: React.MutableRefObject<HTMLAudioElement>;
     isPlaying: boolean;
     setSongs: React.Dispatch<React.SetStateAction<Song[]>>;
-    libraryStatus: boolean;
+  }
+
+  export interface SidePanelProps {
+    songs: Song[];
+    currentSong: Song;
+    setCurrentSong: React.Dispatch<React.SetStateAction<Song>>;
+    audioRef: React.MutableRefObject<HTMLAudioElement>;
+    isPlaying: boolean;
+    setSongs: React.Dispatch<React.SetStateAction<Song[]>>;
+    SidePanelStatus: boolean;
   }
 
   export  interface SongProps {
@@ -64,6 +73,6 @@ export interface Song {
 	setSongs: any,
 }
  export interface NavProps {
-   libraryStatus: boolean;
-   setLibraryStatus: React.Dispatch<React.SetStateAction<boolean>>;
+   SidePanelStatus: boolean;
+   setSidePanelStatus: React.Dispatch<React.SetStateAction<boolean>>;
  }

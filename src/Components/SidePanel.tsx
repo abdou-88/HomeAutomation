@@ -1,19 +1,19 @@
 import React from "react";
-import LibrarySong from "./LibrarySong";
+import LibrarySong from "./Music/LibrarySong";
 import styled from "styled-components";
 
-import {LibraryProps} from '../../Types';
+import {SidePanelProps} from '../Types';
 
-const SidePanel: React.FC<LibraryProps> = ({
+const SidePanel: React.FC<SidePanelProps> = ({
   songs,  
   setCurrentSong,
   audioRef,
   isPlaying,
   setSongs,
-  libraryStatus,
+  SidePanelStatus,
 }) => {
   return (
-    <LibraryContainer libraryStatus={libraryStatus}>
+    <SidePanelContainer SidePanelStatus={SidePanelStatus}>
       <H1>Library</H1>
       <SongContainer>
         {songs.map((song) => (
@@ -28,11 +28,11 @@ const SidePanel: React.FC<LibraryProps> = ({
           />
         ))}
       </SongContainer>
-    </LibraryContainer>
+    </SidePanelContainer>
   );
 };
 
-const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
+const SidePanelContainer = styled.div<{ SidePanelStatus: boolean }>`
   position: fixed;
   z-index: 9;
   top: 0;
@@ -42,9 +42,9 @@ const LibraryContainer = styled.div<{ libraryStatus: boolean }>`
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   user-select: none;
   overflow: auto  ;
-  transform: translateX(${(p) => (p.libraryStatus ? "0%" : "-100%")});
+  transform: translateX(${(p) => (p.SidePanelStatus ? "0%" : "-100%")});
   transition: all 0.5s ease;
-  opacity: ${(p) => (p.libraryStatus ? "100" : "0")};
+  opacity: ${(p) => (p.SidePanelStatus ? "100" : "0")};
   scrollbar-width: thin;  
   border-right: 2px solid #fff;
   &::-webkit-scrollbar {

@@ -9,17 +9,18 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ content, isOpen }) => {
 
-   
-   
-  
+
+
+
     return (
         <>
             <div className="sub-div" >
-                
+
                 <div className={`container ${isOpen ? 'feed-in' : ''}`}>
                     {content}
-                    </div>
+                </div>
                 
+
             </div>
         </>
     );
