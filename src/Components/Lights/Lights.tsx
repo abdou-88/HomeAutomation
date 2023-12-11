@@ -1,6 +1,10 @@
 
 import styled from 'styled-components';
 import '../../assets/lights.css'
+import { useState } from 'react';
+import SidePanel from '../SidePanel';
+import LightContainer from './LightSide';
+import Nav from '../Music/Nav';
 
 interface LightsProps {
     content?: React.ReactNode | null;
@@ -9,13 +13,13 @@ interface LightsProps {
 
 const Lights: React.FC<LightsProps> = () => {
 
-
+    const [SidePanelStatus, setSidePanelStatus] = useState<boolean>(false);
 
 
     return (
         <>
             <AppContainer SidePanelStatus={true}>
-
+            <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} Bttn="Setting" MainTitle = "Lights Control"/>
                 <div className='lights'>
                     <div className='Singlight'>Leaving Room : <input className="l" type="checkbox"></input></div>
                     <div className='Singlight'>Bed Room :<input className="l" type="checkbox"></input></div>
@@ -28,7 +32,13 @@ const Lights: React.FC<LightsProps> = () => {
                     <div className='Singlight'>Toilet : <input className="l" type="checkbox"></input></div>
                 </div>
 
-
+                <SidePanel
+                    component={LightContainer}
+                    componentProps={{
+                        lights: []
+                    }}
+                    SidePanelStatus={SidePanelStatus}
+                />
             </AppContainer>
 
         </>

@@ -75,4 +75,6 @@ export interface Song {
  export interface NavProps {
    SidePanelStatus: boolean;
    setSidePanelStatus: React.Dispatch<React.SetStateAction<boolean>>;
+   Bttn: string;
+   MainTitle : string;
  }

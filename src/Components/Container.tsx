@@ -11,7 +11,6 @@ const Container: React.FC<ContainerProps> = ({ content, isOpen }) => {
 
 
 
-
     return (
         <>
             <div className="sub-div" >
@@ -19,7 +18,7 @@ const Container: React.FC<ContainerProps> = ({ content, isOpen }) => {
                 <div className={`container ${isOpen ? 'feed-in' : ''}`}>
                     {content}
                 </div>
-                
+
 
             </div>
         </>

@@ -1,33 +1,19 @@
 import React from "react";
-import LibrarySong from "./Music/LibrarySong";
 import styled from "styled-components";
 
-import {SidePanelProps} from '../Types';
 
-const SidePanel: React.FC<SidePanelProps> = ({
-  songs,  
-  setCurrentSong,
-  audioRef,
-  isPlaying,
-  setSongs,
-  SidePanelStatus,
-}) => {
+interface SidePanelProps<T extends {}> {
+  component: React.ComponentType<T>;
+  componentProps: T;
+  SidePanelStatus: boolean;
+}
+
+const SidePanel = <T extends {}>({ component: Component, componentProps, SidePanelStatus }: SidePanelProps<T>) => {
+  
   return (
     <SidePanelContainer SidePanelStatus={SidePanelStatus}>
       <H1>Library</H1>
-      <SongContainer>
-        {songs.map((song) => (
-          <LibrarySong
-            song={song}
-            setCurrentSong={setCurrentSong}
-            key={song.id}
-            audioRef={audioRef}
-            isPlaying={isPlaying}
-            songs={songs}
-            setSongs={setSongs}
-          />
-        ))}
-      </SongContainer>
+      <Component {...componentProps} />
     </SidePanelContainer>
   );
 };
@@ -65,14 +51,6 @@ const SidePanelContainer = styled.div<{ SidePanelStatus: boolean }>`
     width: 100%;
     z-index: 9;
   }
-`;
-
-const SongContainer = styled.div`
-
-  flex-direction: column;
-  
-  color : #000000;
- 
 `;
 
 const H1 = styled.h2`

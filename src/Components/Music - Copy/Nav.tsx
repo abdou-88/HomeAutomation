@@ -5,14 +5,14 @@ import { faMusic } from "@fortawesome/free-solid-svg-icons";
 
 import { NavProps } from '../../Types';
 
-const Nav: React.FC<NavProps> = ({ SidePanelStatus, setSidePanelStatus, Bttn, MainTitle }) => {
+const Nav: React.FC<NavProps> = ({ SidePanelStatus, setSidePanelStatus }) => {
   return (
     <><Button onClick={() => setSidePanelStatus(!SidePanelStatus)}>
-      {Bttn}
+      Library
       <FontAwesomeIcon icon={faMusic} />
     </Button>
       <NavContainer>
-        <H1 SidePanelStatus={SidePanelStatus}>{MainTitle}</H1>
+        <H1 SidePanelStatus={SidePanelStatus}>Music Player</H1>
       </NavContainer></>
 
   );

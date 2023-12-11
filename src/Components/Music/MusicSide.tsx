@@ -1,42 +1,45 @@
+// SongContainer.tsx
 import React from "react";
-import LibrarySong from "..//Music/LibrarySong";
 import styled from "styled-components";
+import { Song } from "../../Types";
+import LibrarySong from "./LibrarySong";
 
-import {MusicSideProps} from '../../Types';
+interface SongContainerProps {
+  songs: Song[];
+  setCurrentSong: React.Dispatch<React.SetStateAction<Song>>;
+  audioRef: React.MutableRefObject<HTMLAudioElement>;
+  isPlaying: boolean;
+  setSongs: React.Dispatch<React.SetStateAction<Song[]>>;
+}
 
-const MusicSide: React.FC<MusicSideProps> = ({
-  songs,  
+const SongContainer: React.FC<SongContainerProps> = ({
+  songs,
   setCurrentSong,
   audioRef,
   isPlaying,
-  setSongs
-  
+  setSongs,
 }) => {
   return (
-    
-      <SongContainer>
-        {songs.map((song) => (
-          <LibrarySong
-            song={song}
-            setCurrentSong={setCurrentSong}
-            key={song.id}
-            audioRef={audioRef}
-            isPlaying={isPlaying}
-            songs={songs}
-            setSongs={setSongs}
-          />
-        ))}
-      </SongContainer>
-    
+    <StyledSongContainer>
+      {songs.map((song) => (
+        <LibrarySong
+          song={song}
+          setCurrentSong={setCurrentSong}
+          key={song.id}
+          audioRef={audioRef}
+          isPlaying={isPlaying}
+          songs={songs}
+          setSongs={setSongs}
+        />
+      ))}
+    </StyledSongContainer>
   );
 };
 
-
-
-const SongContainer = styled.div`
-  flex-direction: column;  
-  color : #000000; 
+const StyledSongContainer = styled.div`
+  flex-direction: column;
+  color: #000000;
 `;
 
 
-export default MusicSide;
+export default SongContainer;

@@ -13,7 +13,6 @@ import {Song} from '../../Types'
 
 // Import data
 import data from "./Data";
-import SongContainer from "./MusicSide";
 
 
 
@@ -53,7 +52,7 @@ const Music: React.FC = () => {
 
   return (
     <AppContainer SidePanelStatus={SidePanelStatus}>
-      <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} Bttn = "Library" MainTitle = "Music Player"/>
+      <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} />
       <Track currentSong={currentSong} />
       <Player
         isPlaying={isPlaying}
@@ -66,16 +65,13 @@ const Music: React.FC = () => {
         songs={songs}
         setSongs={setSongs}
       />
-      
       <SidePanel
-        component={SongContainer}
-        componentProps={{
-          songs: songs, // Pass the required props for SongContainer
-          setCurrentSong: setCurrentSong,
-          audioRef: audioRef ,
-          isPlaying: isPlaying,
-          setSongs: setSongs,
-        }}
+        currentSong={currentSong} // Make sure currentSong is included here
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+        audioRef={audioRef}
+        isPlaying={isPlaying}
+        setSongs={setSongs}
         SidePanelStatus={SidePanelStatus}
       />
       <audio
