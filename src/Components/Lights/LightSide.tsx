@@ -21,7 +21,9 @@ const LightContainer: React.FC<LightsContainerProps> = ({
 const StyledSongContainer = styled.div`
   flex-direction: column;
   color: #000000;
+  width: 20vw;
 `;
+
 
 
 export default LightContainer;

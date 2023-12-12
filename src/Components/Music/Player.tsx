@@ -141,7 +141,7 @@ const PlayerContainer = styled.div`
 `;
 
 const TimeControlContainer = styled.div`
-	
+
 	width: 50%;
 	display: flex;
 	@media screen and (max-width: 768px) {

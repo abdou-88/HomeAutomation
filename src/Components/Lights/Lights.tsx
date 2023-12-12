@@ -18,9 +18,10 @@ const Lights: React.FC<LightsProps> = () => {
 
     return (
         <>
-            <AppContainer SidePanelStatus={true}>
-            <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} Bttn="Setting" MainTitle = "Lights Control"/>
-                <div className='lights'>
+            <AppContainer SidePanelStatus={SidePanelStatus}>
+                <Nav SidePanelStatus={SidePanelStatus} setSidePanelStatus={setSidePanelStatus} Bttn="Setting" MainTitle="Lights Control" />
+                <LightControlContainer>
+
                     <div className='Singlight'>Leaving Room : <input className="l" type="checkbox"></input></div>
                     <div className='Singlight'>Bed Room :<input className="l" type="checkbox"></input></div>
                     <div className='Singlight'>Main Corridor :<input className="l" type="checkbox"></input></div>
@@ -30,7 +31,9 @@ const Lights: React.FC<LightsProps> = () => {
                     <div className='Singlight'>Corridor 2 : <input className="l" type="checkbox"></input></div>
                     <div className='Singlight'>Shower :<input className="l" type="checkbox"></input></div>
                     <div className='Singlight'>Toilet : <input className="l" type="checkbox"></input></div>
-                </div>
+
+                </LightControlContainer>
+
 
                 <SidePanel
                     component={LightContainer}
@@ -49,11 +52,27 @@ const AppContainer = styled.div<{ SidePanelStatus: boolean }>`
   transition: all 0.5s ease;
   width: 100%;
   height: 100%; 
+  
   margin-left: ${(p) => (p.SidePanelStatus ? "20rem" : "0")};
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }
 `;
+const LightControlContainer = styled.div`
+    display: flex;
+	flex-direction: column-reverse  ;
+	align-items: center;
+	max-height: 80%; 
+    overflow: auto; 
+    
+    justify-content: space-between; 
+	width: 100%;
+	display: flex;
+	@media screen and (max-width: 768px) {
+		width: 85%;
+	}
+`;
+
 
 
 export default Lights

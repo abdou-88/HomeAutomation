@@ -1,15 +1,4 @@
 
-.lights {
-	width: 100%; /* Set the width of the main container */
-  max-height: 80%; /* Set a fixed height for the main container */
-  overflow: auto; /* Enable scrollbar when content overflows */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-	font-size: 30px;
-    
-}
-
 
 .Singlight {
     width: calc(50% - 10px); /* Adjust the width of each child div */
