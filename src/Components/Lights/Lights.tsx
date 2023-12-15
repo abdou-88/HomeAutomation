@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import '../../assets/lights.css'
 import { useState } from 'react';
 import SidePanel from '../SidePanel';
-import LightContainer from './LightSide';
+import LightSide from './LightSide';
 import Nav from '../Music/Nav';
 
 interface LightsProps {
@@ -36,11 +36,12 @@ const Lights: React.FC<LightsProps> = () => {
 
 
                 <SidePanel
-                    component={LightContainer}
+                    component={LightSide}
                     componentProps={{
                         lights: []
                     }}
                     SidePanelStatus={SidePanelStatus}
+                    SideTitle = "Setting"
                 />
             </AppContainer>
 
@@ -52,7 +53,6 @@ const AppContainer = styled.div<{ SidePanelStatus: boolean }>`
   transition: all 0.5s ease;
   width: 100%;
   height: 100%; 
-  
   margin-left: ${(p) => (p.SidePanelStatus ? "20rem" : "0")};
   @media screen and (max-width: 768px) {
     margin-left: 0;
@@ -60,11 +60,11 @@ const AppContainer = styled.div<{ SidePanelStatus: boolean }>`
 `;
 const LightControlContainer = styled.div`
     display: flex;
-	flex-direction: column-reverse  ;
+	flex-direction: column  ;
 	align-items: center;
+    font-size: 30px;
 	max-height: 80%; 
-    overflow: auto; 
-    
+    overflow: auto;
     justify-content: space-between; 
 	width: 100%;
 	display: flex;

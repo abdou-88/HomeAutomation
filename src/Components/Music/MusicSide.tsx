@@ -39,6 +39,7 @@ const SongContainer: React.FC<SongContainerProps> = ({
 const StyledSongContainer = styled.div`
   flex-direction: column;
   color: #000000;
+  width: 15vw;
 `;
 
 

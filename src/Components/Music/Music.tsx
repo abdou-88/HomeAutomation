@@ -77,6 +77,7 @@ const Music: React.FC = () => {
           setSongs: setSongs,
         }}
         SidePanelStatus={SidePanelStatus}
+        SideTitle = "Library"
       />
       <audio
         onLoadedMetadata={updateTimeHandler}
@@ -92,7 +93,7 @@ const Music: React.FC = () => {
 const AppContainer = styled.div<{ SidePanelStatus: boolean }>`
   transition: all 0.5s ease;
   width: 100%;
-  
+
   height: 100%; 
   margin-left: ${(p) => (p.SidePanelStatus ? "20rem" : "0")};
   @media screen and (max-width: 768px) {

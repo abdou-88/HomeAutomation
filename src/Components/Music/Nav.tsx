@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMusic } from "@fortawesome/free-solid-svg-icons";
+
 
 import { NavProps } from '../../Types';
 
@@ -9,7 +8,7 @@ const Nav: React.FC<NavProps> = ({ SidePanelStatus, setSidePanelStatus, Bttn, Ma
   return (
     <><Button onClick={() => setSidePanelStatus(!SidePanelStatus)}>
       {Bttn}
-      <FontAwesomeIcon icon={faMusic} />
+      
     </Button>
       <NavContainer>
         <H1 SidePanelStatus={SidePanelStatus}>{MainTitle}</H1>

@@ -8,12 +8,12 @@ interface LightsContainerProps {
   
 }
 
-const LightSide: React.FC<LightsContainerProps> = ({
+const CurtainsSide: React.FC<LightsContainerProps> = ({
   
 }) => {
   return (
     <StyledLightContainer>
-    sth
+    cutrains
     </StyledLightContainer>
   );
 };
@@ -26,4 +26,4 @@ const StyledLightContainer = styled.div`
 
 
 
-export default LightSide;
+export default CurtainsSide;

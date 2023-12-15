@@ -1,14 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
-interface Song {
-  name: string;
-  cover: string;
-  artist: string;
-  audio: string;
-  color: string[];
-  id: string;
-  active: boolean;
-}
+import {Song} from '../../Types'
+
 
 function chillHop(): Song[] {
   return [

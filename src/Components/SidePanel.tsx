@@ -6,13 +6,14 @@ interface SidePanelProps<T extends {}> {
   component: React.ComponentType<T>;
   componentProps: T;
   SidePanelStatus: boolean;
+  SideTitle: string;
 }
 
-const SidePanel = <T extends {}>({ component: Component, componentProps, SidePanelStatus }: SidePanelProps<T>) => {
+const SidePanel = <T extends {}>({ component: Component, componentProps, SidePanelStatus, SideTitle }: SidePanelProps<T>) => {
   
   return (
     <SidePanelContainer SidePanelStatus={SidePanelStatus}>
-      <H1>Library</H1>
+      <H1>{SideTitle}</H1>
       <Component {...componentProps} />
     </SidePanelContainer>
   );
