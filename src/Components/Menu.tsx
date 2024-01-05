@@ -15,6 +15,7 @@ import Appliances from './Appliances/Appliances';
 interface MenuProps {
     updateContainer: (newState: React.ReactNode, isOpen: boolean) => void;
 }
+
 interface ImenuItems {
     icon: string;
     component: JSX.Element;
