@@ -12,18 +12,19 @@ import Movies from './Movies/Movies';
 import Appliances from './Appliances/Appliances';
 
 
-interface MenuProps {
+interface IMenuProps {
     updateContainer: (newState: React.ReactNode, isOpen: boolean) => void;
 }
+
 interface ImenuItems {
     icon: string;
     component: JSX.Element;
     title: string,
 }
 
-const Menu: React.FC<MenuProps> = ({ updateContainer }) => {
+const Menu: React.FC<IMenuProps> = ({ updateContainer }) => {
 
-    const [isFlipped, setIsFlipped] = useState([true, false, false, false, false,false]);
+    const [isFlipped, setIsFlipped] = useState([false, false, false, false, false,false]);
 
     const handleClick = (id: number, newdiv: ReactNode ) => {
         const newArray = isFlipped.map((_value, i) => (i == id ? !isFlipped[id] : false));
@@ -72,6 +73,7 @@ const Menu: React.FC<MenuProps> = ({ updateContainer }) => {
                    
                     menuItems.map((object: ImenuItems, index: number) => (
                          
+                        
                         <div key={index} className={`flip-container ${isFlipped[index] ? 'flip' : ''}`} onClick={() => handleClick(index, object.component)}>
                             <div className="flipper">
                                 <div className="front">
